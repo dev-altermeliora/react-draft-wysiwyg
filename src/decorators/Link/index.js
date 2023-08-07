@@ -64,7 +64,7 @@ function getLinkComponent(config) {
           onMouseEnter={this.toggleShowPopOver}
           onMouseLeave={this.toggleShowPopOver}
         >
-          <a href={ensureSafeUrl(url)} target={targetOption}>{children}</a>
+          <a href={ensureSafeUrl(url)} target={targetOption} onClick={this.openLink}>{children}</a>
           {showPopOver && showOpenOptionOnHover ?
             <img
               src={openlink}
