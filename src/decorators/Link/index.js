@@ -43,6 +43,8 @@ function getLinkComponent(config) {
       // Dispatch event on open
       const event = new CustomEvent('text-link:clicked', { detail: { url, viaFocus: !!linkTab } });
       document.dispatchEvent(event);
+
+      console.log('event', event);
     };
 
     toggleShowPopOver: Function = () => {
