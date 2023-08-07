@@ -18,7 +18,8 @@ function findLinkEntities(contentBlock, callback, contentState) {
 }
 
 function getLinkComponent(config) {
-  const showOpenOptionOnHover = config.showOpenOptionOnHover;
+  // Hard remove showOpenOptionOnHover
+  const showOpenOptionOnHover = false; // config.showOpenOptionOnHover;
   return class Link extends Component {
     static propTypes = {
       entityKey: PropTypes.string.isRequired,
@@ -38,6 +39,10 @@ function getLinkComponent(config) {
       if (linkTab) {
         linkTab.focus();
       }
+
+      // Dispatch event on open
+      const event = new CustomEvent('text-link:clicked', { detail: { url, viaFocus: !!linkTab } });
+      document.dispatchEvent(event);
     };
 
     toggleShowPopOver: Function = () => {
