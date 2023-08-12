@@ -1,5 +1,11 @@
 # React Draft Wysiwyg
 
+How to deploy to new version:
+1. Make changes + increase version 
+2. Build by npm run build (commit all changes, include build files)
+3. Push to origin
+4. Run npm publish
+
 A Wysiwyg editor built using ReactJS and DraftJS libraries.
 [Demo Page](https://jpuri.github.io/react-draft-wysiwyg).
 
