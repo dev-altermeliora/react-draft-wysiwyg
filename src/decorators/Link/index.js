@@ -31,7 +31,8 @@ function getLinkComponent(config) {
       showPopOver: false,
     };
 
-    openLink: Function = () => {
+    openLink: Function = (e) => {
+      e.preventDefault();
       const { entityKey, contentState } = this.props;
       const { url } = contentState.getEntity(entityKey).getData();
       const linkTab = window.open(ensureSafeUrl(url), 'blank'); // eslint-disable-line no-undef
@@ -65,15 +66,15 @@ function getLinkComponent(config) {
           onMouseLeave={this.toggleShowPopOver}
         >
           <a href={ensureSafeUrl(url)} target={targetOption} onClick={this.openLink}>{children}</a>
-          {showPopOver && showOpenOptionOnHover ?
-            <img
-              src={openlink}
-              alt=""
-              onClick={this.openLink}
-              className="rdw-link-decorator-icon"
-            />
-            : undefined
-          }
+          {/*{showPopOver && showOpenOptionOnHover ?*/}
+          {/*  <img*/}
+          {/*    src={openlink}*/}
+          {/*    alt=""*/}
+          {/*    onClick={this.openLink}*/}
+          {/*    className="rdw-link-decorator-icon"*/}
+          {/*  />*/}
+          {/*  : undefined*/}
+          {/*}*/}
         </span>
       );
     }
